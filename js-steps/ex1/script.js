@@ -1,24 +1,19 @@
+/*Cria uma função exibirServicos que usa .forEach() pra mostrar no console todos os serviços assim:
+
+Serviço: corte | Preço: R$30
+Serviço: barba | Preço: R$40
+Serviço: combo | Preço: R$60*/
+
 const servicos = [
-  { nome: "corte", preco: 30 },
-  { nome: "barba", preco: 20 },
-  { nome: "combo", preco: 45 }
+  {nome: "corte", valor:30},
+  {nome: "barba", valor: 40},
+  {nome: "combo,", valor: 60}
 ];
 
-function calculaServico(servicoEscolhido, ehVip) {
-  
-  const servico = servicos.find(servico => servico.nome === servicoEscolhido);
-  if(!servico){
-    console.log("Serviço não encontrado");
-    return;
-  }
-
-  if (ehVip) {
-    const desconto = servico.preco * 0.2;
-    const precoDescontado = servico.preco - desconto;
-    console.log(`O preço do ${servicoEscolhido} é de ${precoDescontado}`)
-  } else {
-    console.log(`Nao ha desconto para o serviço ${servicoEscolhido}`)
-  }
+function exibirServicos () {
+  servicos.forEach(servicos => {
+    console.log(`Serviço: ${servicos.nome} | Valor: R$ ${servicos.valor}`)
+  })
 }
 
-calculaServico("corte", true);
+exibirServicos()
